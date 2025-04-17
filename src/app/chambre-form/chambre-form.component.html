@@ -1,0 +1,15 @@
+<!-- src/app/chambre-form/chambre-form.component.html -->
+<h2>Ajouter une Chambre</h2>
+<form (ngSubmit)="onSubmit()">
+  <label for="numeroChambre">Numéro de chambre:</label>
+  <input type="number" [(ngModel)]="chambre.numeroChambre" name="numeroChambre" required />
+
+  <label for="typeC">Type:</label>
+  <select [(ngModel)]="chambre.typeC" name="typeC" required>
+    <option value="SIMPLE">SIMPLE</option>
+    <option value="DOUBLE">DOUBLE</option>
+    <option value="TRIPLE">TRIPLE</option>
+  </select>
+
+  <button type="submit">Ajouter</button>
+</form>

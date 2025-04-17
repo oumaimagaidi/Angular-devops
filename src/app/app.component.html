@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  <h2>Ajouter une Chambre</h2>
+  <form (ngSubmit)="addChambre()" #chambreForm="ngForm">
+    <div class="form-group">
+      <label for="nomChambre">Nom de la Chambre</label>
+      <input type="text" class="form-control" id="nomChambre" [(ngModel)]="chambre.nomChambre" name="nomChambre"
+        required />
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="typec">Type de Chambre</label>
+      <select class="form-control" id="typec" [(ngModel)]="chambre.typec" name="typec" required>
+        <option *ngFor="let type of typesChambres" [value]="type">
+          {{ type }}
+        </option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3">Ajouter</button>
+  </form>
+
+  <div *ngIf="message" class="alert alert-success mt-3">
+    {{ message }}
+  </div>
+</div>
